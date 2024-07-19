@@ -1,4 +1,5 @@
 import './bootstrap.js';
+import './js/product_feats.js';
 /*
  * Welcome to your app's main JavaScript file!
  *

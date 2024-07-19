@@ -1,8 +1,8 @@
 {% extends 'base.html.twig' %}
+{% import 'macros/_product_item.html.twig' as product_row %} 
 
 {% block body %}
     <h1>Las 10 Mejores Barras de Sonido en España</h1>
-
     <table>
         <thead>
             <tr>
@@ -15,72 +15,7 @@
         <tbody>
             <tr style="height: 10px;"><td></td></tr>
             {% for product in products %}
-                <tr>
-                    <td class="rank-cell">
-                        <div class="product-rank">
-                            {% if loop.index == 1 %}
-                                <p class="badge-1">#1 MEJOR OPCIÓN 2024</p>
-                            {% elseif loop.index == 3 %}
-                                <p class="badge-2">#3 MEJOR VALOR 2024</p>
-                            {% else %}
-                                <p class="rank">#{{ loop.index }}</p>
-                            {% endif %}
-                        </div>
-                        <img class="product-img" src="{{ product.imageUrl }}" alt="{{ product.title }}">
-                    </td>
-                    <td class="center">
-                        <div class="product-rating">
-                            <p class="rating">{{ product.rating }}</p>
-                        <div class="stars">
-                            {% for i in 1..5 %}
-                                <span class="star {% if i <= product.rating %}filled{% endif %}">★</span>
-                            {% endfor %}
-                        </div>
-                        <p class="review">
-                            {% if product.rating <= 9.80 %}
-                            "Excepcional"
-                            {% elseif product.rating <= 9.5 %}
-                            "Excelente"
-                            {% else %}
-                            "Genial"
-                            {% endif %}
-                        </p>
-                        </div>
-                    </td>
-                    <td class="product-details">
-                        <div>
-                            <h2>
-                                {% if product.title|length > 65 %}
-                                    {{ product.title|slice(0, 65) }}...
-                                {% else %}
-                                    {{ product.title }}
-                                {% endif %}
-                            </h2>
-                            <p class="brand">{{ product.brand }}</p>
-                            <div class="extra-info">
-                            {% if product.discount %}
-                                <p class="discount">{{ product.discount }}% Descuento</p>
-                            {% endif %}
-                            <p class="discount">Envío gratis</p>
-                            </div>
-                            <div class="more">
-                                <p>Mostrar más</p>
-                            <span class="material-symbols-outlined">
-                                keyboard_arrow_down
-                                </span>
-                            </div>
-                        </div>
-                    </td>
-                    <td class="absolute">
-                        <div class="product-actions">
-                            <a href="#" class="buy-button">Comprar ahora <span class="material-symbols-outlined">
-                                chevron_right
-                                </span></a>
-                            <img src="{{ asset('images/amazon.png') }}" alt="Amazon" class="amazon-logo">
-                        </div>
-                    </td>
-                </tr>
-                <tr><td style="border: none"></td></tr>
+                {{ product_row.product_row(product, loop.index) }}
             {% endfor %}
         </tbody>
     </table>

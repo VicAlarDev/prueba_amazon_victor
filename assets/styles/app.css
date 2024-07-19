@@ -58,12 +58,15 @@ th:nth-child(4) {
   width: 180px;
 }
 
-tbody > tr:nth-child(even) {
+tbody > tr:not(:first-child):has(> td:nth-child(4)) {
   height: 170px;
 }
 
 td {
   border: 1px solid #ddd;
+}
+
+.max-height {
   max-height: 170px;
 }
 
@@ -74,6 +77,51 @@ tbody > tr:nth-child(1) > td {
 thead {
   background-color: #F5F5F5;
   font-size: 0.8rem;
+}
+
+.feat-container {
+  width: 850px;
+  padding: 16px;
+  height: 100px;
+  position: relative;
+}
+
+.feat-container > .td-absolute > div {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.feat-container > .td-absolute > div > ul {
+  width: 75%;
+}
+
+.feat-container > .td-absolute > div > div {
+  align-self: flex-end;
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+  column-gap: -4px;
+}
+
+.feat-container > .td-absolute > div > div > img {
+  margin-bottom: -15px;
+}
+
+.td-absolute {
+  position: absolute;
+  width: 850px;
+  height: 100px;
+}
+
+.none {
+  display: none;
+}
+
+.feat-container-empty {
+  height: 30px;
 }
 
 .center {
@@ -236,6 +284,8 @@ thead {
   display: flex;
   gap: 8px;
   align-items: center;
+  cursor: pointer;
+  width: fit-content;
 }
 
 .more > p {
@@ -243,14 +293,20 @@ thead {
   color: #1679fa;
 }
 
+.more > span {
+  font-size: 1.2rem;
+  color: #1679fa;
+}
+
 .features {
-  list-style: none;
-  padding: 0;
+  text-align: left;
+  padding: 16px;
+  font-size: 0.9rem;
 }
 
 .absolute {
   position: absolute;
-  width: 180px;
+  width: 168px;
 }
 
 .product-actions {
@@ -263,7 +319,7 @@ thead {
 }
 
 .amazon-logo {
-  width: 60px;
+  width: 100px;
   height: 60px;
   margin-top: -20px;
 }
