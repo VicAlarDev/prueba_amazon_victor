@@ -1,3 +1,295 @@
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
 body {
-    background-color: skyblue;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+
+input, button, textarea, select {
+  font: inherit;
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+
+#root, #__next {
+  isolation: isolate;
+}
+
+table {
+  width: 850px;
+  margin: 2rem auto;
+  border-collapse: collapse;
+  border-spacing: 10px;
+  overflow-x: scroll;
+}
+
+td {
+  padding: 1rem;
+  text-align: center;
+  vertical-align: top;
+}
+
+th:nth-child(2) {
+  text-align: center;
+  padding: 4px 0;
+}
+
+th:nth-child(3), td:nth-child(3) {
+  text-align: left;
+  padding: auto 0;
+}
+
+th:nth-child(4) {
+  width: 180px;
+}
+
+tbody > tr:nth-child(even) {
+  height: 170px;
+}
+
+td {
+  border: 1px solid #ddd;
+  max-height: 170px;
+}
+
+tbody > tr:nth-child(1) > td {
+  border: none
+}
+
+thead {
+  background-color: #F5F5F5;
+  font-size: 0.8rem;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  height: 170px;
+}
+
+.product-rank {
+  font-size: 0.8rem;
+  color: #999;
+  margin: 0;
+}
+
+.badge-1 {
+  position: absolute;
+  margin: 0;
+  top: -10px;
+  left: -10px;
+  width: 220px;
+  padding: 2px 2px 2px 12px;
+  background-color: #8ACC42;
+  text-transform: capitalize;
+  text-align: left;
+  font-weight: bold;
+  color: white;
+}
+
+.badge-1::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 3px;
+  width: 0;
+  height: 0;
+  margin-top: 1px;
+  border-top: 8px solid #8ACC42;
+  border-left: 8px solid transparent;
+}
+
+.badge-1::before {
+  content: "";
+  position: absolute;
+  top: 0px;
+  right: 0;
+  width: 0;
+  height: 0;
+  border-top: 11px solid transparent;
+  border-right: 23px solid white;
+  border-bottom: 11px solid transparent;
+}
+
+.badge-2 {
+  position: absolute;
+  margin: 0;
+  top: -10px;
+  left: -10px;
+  width: 220px;
+  padding: 2px 2px 2px 12px;
+  background-color: #639330;
+  text-transform: capitalize;
+  text-align: left;
+  font-weight: bold;
+  color: white;
+}
+
+.badge-2::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 3px;
+  width: 0;
+  height: 0;
+  margin-top: 1px;
+  border-top: 8px solid #639330;
+  border-left: 8px solid transparent;
+}
+
+.badge-2::before {
+  content: "";
+  position: absolute;
+  top: 0px;
+  right: 0;
+  width: 0;
+  height: 0;
+  border-top: 11px solid transparent;
+  border-right: 23px solid white;
+  border-bottom: 11px solid transparent;
+}
+
+.rank-cell {
+  position: relative;
+  width: 200px;
+}
+
+.rank {
+  font-size: 1rem;
+  font-weight: bold;
+  padding: 2px 4px;
+  color: #000;
+  position: absolute;
+  margin: 0;
+  top: 0;
+  left: 0;
+  background-color: #E2E2E2;
+}
+
+.product-img {
+  width: 100px;
+  height: 100px;
+  margin: 10px auto
+}
+
+.product-rating {
+  width: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 20px;
+}
+
+.product-rating .rating {
+  font-size: 3rem;
+  font-weight: bold;
+}
+
+.product-rating .review {
+  font-size: 0.8rem;
+  color: #666;
+}
+
+.stars {
+  color: gold;
+}
+
+.star {
+  font-size: 1rem;
+}
+
+.star:not(.filled) {
+  color: #ccc;
+}
+
+.brand {
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 0.5rem;
+}
+
+.product-details {
+  width: 370px;
+  padding-right: 3rem;
+}
+
+.product-details h2 {
+  font-size: 0.9rem;
+}
+
+.more {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.more > p {
+  font-size: 0.8rem;
+  color: #1679fa;
+}
+
+.features {
+  list-style: none;
+  padding: 0;
+}
+
+.absolute {
+  position: absolute;
+  width: 180px;
+}
+
+.product-actions {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  top: 50%;
+  height: 170px;
+}
+
+.amazon-logo {
+  width: 60px;
+  height: 60px;
+  margin-top: -20px;
+}
+
+.extra-info {
+  display: flex;
+  gap: 8px;
+}
+
+.discount {
+  font-size: 0.8rem;
+  margin-bottom: 0.5rem;
+  border: 1px solid #b8b8b8;
+  border-radius: 8px;
+  width: fit-content;
+  padding: 0.3rem;
+}
+
+.buy-button {
+  background-color: #FF9900;
+  color: white;
+  padding: 0.5rem 0.3rem;
+  font-size: 0.9rem;
+  border: none;
+  text-decoration: none;
+  font-weight: bold;
+  display: flex;
+  gap: 2px;
 }

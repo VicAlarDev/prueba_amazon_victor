@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\ProductRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: ProductRepository::class)]
@@ -16,20 +18,28 @@ class Product
     #[ORM\Column(length: 10)]
     private ?string $asin = null;
 
-    #[ORM\Column(length: 255)]
+    #[ORM\Column(type: 'text')]
     private ?string $title = null;
 
-    #[ORM\Column(length: 50)]
+    #[ORM\Column(length: 255)]
     private ?string $brand = null;
 
     #[ORM\Column]
-    private ?float $price = null;
+    private ?int $discount = null;
 
     #[ORM\Column]
     private ?float $rating = null;
 
     #[ORM\Column(length: 255)]
     private ?string $imageUrl = null;
+
+    #[ORM\OneToMany(mappedBy: 'product', targetEntity: Feature::class)]
+    private Collection $features;
+
+    public function __construct()
+    {
+        $this->features = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -79,14 +89,14 @@ class Product
         return $this;
     }
 
-    public function getPrice(): ?float
+    public function getDiscount(): ?float
     {
-        return $this->price;
+        return $this->discount;
     }
 
-    public function setPrice(float $price): static
+    public function setDiscount(float $discount): static
     {
-        $this->price = $price;
+        $this->discount = $discount;
 
         return $this;
     }
@@ -113,5 +123,10 @@ class Product
         $this->imageUrl = $imageUrl;
 
         return $this;
+    }
+
+    public function getFeatures(): Collection
+    {
+        return $this->features;
     }
 }

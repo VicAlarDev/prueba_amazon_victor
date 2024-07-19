@@ -23,7 +23,7 @@ services:
     volumes:
       - "$HOME/.webdb:/usr/src/app/static/version"
     ports:
-      - "127.0.0.1:22072:22072"
+      - "127.0.0.1:22071:22071"
     depends_on:
       - database
 volumes:
