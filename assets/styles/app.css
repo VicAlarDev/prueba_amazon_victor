@@ -7,10 +7,16 @@
   margin: 0;
 }
 
+.title {
+  font-size: 2rem;
+  padding: auto;
+}
+
 body {
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
+  font-family: sans-serif;
 }
 
 img, picture, video, canvas, svg {
@@ -30,12 +36,39 @@ p, h1, h2, h3, h4, h5, h6 {
   isolation: isolate;
 }
 
+.content-container {
+  display: grid; 
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas: 
+    "title title" 
+    "table images";
+  gap: 24px;
+  padding: 24px;
+  align-items: start;
+  justify-content: center;
+  margin: 0 auto;
+  max-width: 1300px; 
+}
+
 table {
   width: 850px;
-  margin: 2rem auto;
+  margin: 0;
   border-collapse: collapse;
   border-spacing: 10px;
-  overflow-x: scroll;
+  overflow-x: scroll; 
+}
+
+.side-img {
+  width: 100%;
+  height: auto;
+  margin-left: 24px;
+}
+
+.side-img > img {
+  width: 400px;
+  height: 600px;
+  display: block;
+  margin-bottom: 16px;
 }
 
 td {
@@ -341,13 +374,14 @@ thead {
 .buy-button {
   background-color: #FF9900;
   color: white;
-  padding: 0.5rem 0.3rem;
-  font-size: 0.9rem;
+  padding: 0.5rem 0.4rem;
+  font-size: 0.7rem;
   border: none;
   text-decoration: none;
   font-weight: bold;
   display: flex;
-  gap: 2px;
+  align-items: center;
+  justify-content: center;
 }
 
 .btn-buy {
@@ -383,7 +417,7 @@ thead {
 
 .user-info > p {
   font-size: 1rem;
-  font-family: Calibri;
+  font-family: sans-serif;
   font-weight: bold;
 }
 
