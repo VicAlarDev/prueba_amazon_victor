@@ -21,9 +21,9 @@
             {% endfor %}
         </div>
         <p class="review">
-            {% if product.rating <= 9.80 %}
+            {% if product.rating >= 9.8 %}
             "Excepcional"
-            {% elseif product.rating <= 9.5 %}
+            {% elseif product.rating >= 9.5 %}
             "Excelente"
             {% else %}
             "Genial"
