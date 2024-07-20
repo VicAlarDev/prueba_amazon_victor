@@ -14,6 +14,9 @@ RUN apk add --no-cache libpq-dev \
 RUN docker-php-ext-configure intl \
     && docker-php-ext-install intl
 
+# Install PostgreSQL client tools
+RUN apk add --no-cache postgresql-client
+
 # OPCache (if you need it by any means)
 # RUN docker-php-ext-install opcache
 
