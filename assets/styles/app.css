@@ -349,3 +349,11 @@ thead {
   display: flex;
   gap: 2px;
 }
+
+.btn-buy {
+  border: none;
+  background-color: transparent;
+  margin: 0;
+  padding: 0;
+  z-index: 3;
+}

@@ -21,9 +21,9 @@
             {% endfor %}
         </div>
         <p class="review">
-            {% if product.rating >= 9.8 %}
+            {% if product.rating >= 9.9 %}
             "Excepcional"
-            {% elseif product.rating >= 9.5 %}
+            {% elseif product.rating >= 9.3 %}
             "Excelente"
             {% else %}
             "Genial"
@@ -55,9 +55,11 @@
         </td>
         <td class="absolute max-height">
           <div class="product-actions">
-            <a href="#" class="buy-button">Comprar ahora <span class="material-symbols-outlined">
-                chevron_right
-                </span></a>
+            <button class="btn-buy">
+                <a href="{{ product.productUrl }}" target="_blank" class="buy-button">Comprar ahora <span class="material-symbols-outlined">
+                    chevron_right
+                    </span></a>
+            </button>
             <img src="{{ asset('images/amazon.png') }}" alt="Amazon" class="amazon-logo">
         </div>
         </td>
@@ -71,9 +73,11 @@
                 {% endfor %}
             </ul>
             <div>
-                <a href="#" class="buy-button">Comprar ahora <span class="material-symbols-outlined">
-                    chevron_right
-                    </span></a>
+                <button class="btn-buy">
+                    <a href="{{ product.productUrl }}" target="_blank" class="buy-button">Comprar ahora <span class="material-symbols-outlined">
+                        chevron_right
+                        </span></a>
+                </button>
                 <img src="{{ asset('images/amazon.png') }}" alt="Amazon" class="amazon-logo">
             </div>
           </div>

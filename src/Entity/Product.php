@@ -32,6 +32,8 @@ class Product
 
     #[ORM\Column(length: 255)]
     private ?string $imageUrl = null;
+    #[ORM\Column(length: 255)]
+    private ?string $productUrl = null;
 
     #[ORM\OneToMany(mappedBy: 'product', targetEntity: Feature::class)]
     private Collection $features;
@@ -128,5 +130,17 @@ class Product
     public function getFeatures(): Collection
     {
         return $this->features;
+    }
+
+    public function setProductUrl(string $productUrl): static
+    {
+        $this->productUrl = $productUrl;
+
+        return $this;
+    }
+
+    public function getProductUrl(): ?string
+    {
+        return $this->productUrl;
     }
 }

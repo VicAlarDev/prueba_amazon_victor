@@ -88,6 +88,7 @@ class ProcessJsonCommand extends Command
         $product->setTitle($item['ItemInfo']['Title']['DisplayValue']);
         $product->setBrand($item['ItemInfo']['ByLineInfo']['Brand']['DisplayValue']);
         $product->setImageUrl($item['Images']['Primary']['Large']['URL']);
+        $product->setProductUrl($item['DetailPageURL']);
         $product->setDiscount($item['Offers']['Listings'][0]['Price']['Savings']['Percentage']);
         $product->setRating(mt_rand(90, 100) / 10);
     }
@@ -101,6 +102,7 @@ class ProcessJsonCommand extends Command
         $product->setImageUrl($item['Images']['Primary']['Large']['URL']);
         $product->setDiscount($item['Offers']['Listings'][0]['Price']['Savings']['Percentage']);
         $product->setRating(mt_rand(90, 100) / 10);
+        $product->setProductUrl($item['DetailPageURL']);
         return $product;
     }
 }
