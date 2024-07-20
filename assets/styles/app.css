@@ -357,3 +357,82 @@ thead {
   padding: 0;
   z-index: 3;
 }
+
+/* Header */
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background-color: #232F3E;
+  color: white;
+}
+
+.header > img {
+  width: 100px;
+  height: 30px;
+}
+
+.user-info {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  position: relative;
+}
+
+.user-info > p {
+  font-size: 1rem;
+  font-family: Calibri;
+  font-weight: bold;
+}
+
+.user-info > button {
+  background-color: transparent;
+  border: none;
+  color: white;
+  display: flex;
+  align-items: center;
+}
+
+.circle {
+  background-color: #FF9900;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height: 30px;
+}
+
+#dropdown-menu {
+  position: absolute;
+  top: 100%;
+  right: 0; 
+  background-color: #232F3E;
+  border: 1px solid #364455;
+  border-radius: 5px;
+  padding: 10px;
+  z-index: 10;
+  display: none;
+}
+
+#dropdown-button:focus + #dropdown-menu,
+#dropdown-menu:hover {
+  display: block;
+}
+
+.logout-btn {
+  display: block;
+  padding: 5px 10px;
+  text-decoration: none;
+  color: #FF9900;
+  border-radius: 15px;
+  background-color: transparent;
+  border: 1px solid #FF9900;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  font-weight: bold;
+}

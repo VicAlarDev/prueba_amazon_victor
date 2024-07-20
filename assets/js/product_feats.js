@@ -31,7 +31,7 @@ function toggleFeatures(icon, text, featContainer, tdAbsolute, featList) {
 
   // Handle height adjustments and new row insertion
   if (!featContainer.classList.contains('feat-container-empty')) { 
-      const featListHeight = featList.offsetHeight + 20; // Add some padding
+      const featListHeight = featList.offsetHeight + 20;
       tdAbsolute.style.height = featListHeight + 'px';
       featContainer.style.height = featListHeight + 'px';
 
