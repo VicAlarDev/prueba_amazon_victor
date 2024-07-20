@@ -5,22 +5,26 @@
     {% include 'landing_page/header.html.twig' %}
     <div class="content-container">
         <h1 class="title" style="grid-area: title;">Las 10 Mejores Barras de Sonido en España</h1>
-        <table>
-            <thead>
-                <tr>
-                    <th>Producto</th>
-                    <th>Nuestra Puntuación</th>
-                    <th>Características Clave</th>
-                    <th></th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr style="height: 10px;"><td></td></tr>
-                {% for product in products %}
-                    {{ product_row.product_row(product, loop.index) }}
-                {% endfor %}
-            </tbody>
-        </table>
+        <div class="center-table">
+            <div class="table-responsive">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Producto</th>
+                            <th>Nuestra Puntuación</th>
+                            <th>Características Clave</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr style="height: 10px;"><td></td></tr>
+                        {% for product in products %}
+                            {{ product_row.product_row(product, loop.index) }}
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
         <div class="side-img">
             <img src="{{ asset('images/lg.avif') }}" alt="footer">
             <img src="{{ asset('images/ultimea-b.jpg') }}" alt="footer">

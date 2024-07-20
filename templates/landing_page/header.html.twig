@@ -1,25 +1,21 @@
 <header>
   <div class="header">
-    <img src="{{ asset('images/logo-blanco.png') }}" alt="logo">
+    <img src="{{ asset('images/logo-blanco.png') }}" alt="logo"> 
     <div class="user-info">
       <div class="circle">
-        <span class="material-symbols-outlined">
-          person
-        </span>
+        <span class="material-symbols-outlined">person</span>
       </div>
       <p>{{ app.user.fullName }}</p>
       <button id="dropdown-button">
         <span id="dropdown-icon" class="material-symbols-outlined">keyboard_arrow_down</span>
       </button>
       <div id="dropdown-menu" class="hidden">
-        
         <a href="{{ path('app_logout') }}" class="logout-btn">
-          <span class="material-symbols-outlined">
-            logout
-            </span>Cerrar sesión</a>
+          <span class="material-symbols-outlined">logout</span>Cerrar sesión
+        </a>
       </div>
     </div>
   </div>
 </header>
 
-<script src="{{ asset('js/dropdown.js') }}"></script>
+<script src="{{ asset('js/dropdown.js') }}"></script> 

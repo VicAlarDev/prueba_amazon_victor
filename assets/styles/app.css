@@ -38,7 +38,7 @@ p, h1, h2, h3, h4, h5, h6 {
 
 .content-container {
   display: grid; 
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 2fr 1fr;
   grid-template-areas: 
     "title title" 
     "table images";
@@ -47,7 +47,16 @@ p, h1, h2, h3, h4, h5, h6 {
   align-items: start;
   justify-content: center;
   margin: 0 auto;
-  max-width: 1300px; 
+  width: 100%;
+}
+
+@media (max-width: 1200px) {
+  .content-container {
+    display: block;
+  }
+  .side-img {
+    display: none; 
+  }
 }
 
 table {
@@ -55,7 +64,14 @@ table {
   margin: 0;
   border-collapse: collapse;
   border-spacing: 10px;
-  overflow-x: scroll; 
+}
+
+.table-responsive {
+  display: block;
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  -ms-overflow-style: -ms-autohiding-scrollbar;
 }
 
 .side-img {
@@ -101,6 +117,9 @@ td {
 
 .max-height {
   max-height: 170px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 tbody > tr:nth-child(1) > td {
@@ -157,10 +176,8 @@ thead {
   height: 30px;
 }
 
-.center {
-  display: flex;
-  justify-content: center;
-  height: 170px;
+.center-table {
+  margin: 0 auto;
 }
 
 .product-rank {
