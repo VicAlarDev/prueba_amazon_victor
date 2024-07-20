@@ -89,7 +89,7 @@ class ProcessJsonCommand extends Command
         $product->setBrand($item['ItemInfo']['ByLineInfo']['Brand']['DisplayValue']);
         $product->setImageUrl($item['Images']['Primary']['Large']['URL']);
         $product->setDiscount($item['Offers']['Listings'][0]['Price']['Savings']['Percentage']);
-        $product->setRating(mt_rand(900, 1000) / 100);
+        $product->setRating(mt_rand(90, 100) / 10);
     }
 
     private function createProductFromItem(array $item): Product
@@ -100,7 +100,7 @@ class ProcessJsonCommand extends Command
         $product->setBrand($item['ItemInfo']['ByLineInfo']['Brand']['DisplayValue']);
         $product->setImageUrl($item['Images']['Primary']['Large']['URL']);
         $product->setDiscount($item['Offers']['Listings'][0]['Price']['Savings']['Percentage']);
-        $product->setRating(mt_rand(900, 1000) / 100);
+        $product->setRating(mt_rand(90, 100) / 10);
         return $product;
     }
 }
