@@ -1,19 +1,75 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Register{% endblock %}
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('styles/auth.css') }}"> 
+{% endblock %}
+
+{% block title %}Registro{% endblock %}
 
 {% block body %}
-    <h1>Register</h1>
+    <div class="auth-container">
+        <img src="{{ asset('images/logo-blanco.png') }}" alt="logo" class="logo">
 
-    {{ form_errors(registrationForm) }}
+        <div class="container">
+            <form class="form" {{ form_start(registrationForm) }}
+            <h1>Registrarse</h1>
+            <div class="form-group">
+                <div class="label-container">  
+                    <span class="material-symbols-outlined icon-left">
+                        person
+                    </span>
+                    {{ form_label(registrationForm.fullName, null, { 'label_attr': {'class': 'label'} }) }}
+                </div>
+                <div class="inputForm">
+                    {{ form_widget(registrationForm.fullName, { 'attr': {'class': 'input'} }) }}
+                </div>
+                {{ form_errors(registrationForm.fullName) }}
+            </div>
+                <div class="form-group">
+                    <div class="label-container">  
+                        <span class="material-symbols-outlined icon-left">
+                            mail
+                        </span>
+                        {{ form_label(registrationForm.email, null, { 
+                            'label_attr': {
+                                'class': 'label'
+                            } 
+                        }) }}
+                    </div>
+                    <div class="inputForm">
+                        {{ form_widget(registrationForm.email, { 
+                            'attr': {
+                                'class': 'input'
+                            } 
+                        }) }}
+                    </div>
+                    {{ form_errors(registrationForm.email) }}
+                </div>
 
-    {{ form_start(registrationForm) }}
-        {{ form_row(registrationForm.email) }}
-        {{ form_row(registrationForm.plainPassword, {
-            label: 'Password'
-        }) }}
-        {{ form_row(registrationForm.agreeTerms) }}
+                <div class="form-group">
+                    <div class="label-container">
+                        <span class="material-symbols-outlined icon-left">
+                            lock
+                        </span>
+                        {{ form_label(registrationForm.plainPassword, 'Contraseña', { 
+                            'label_attr': {
+                                'class': 'label'
+                            } 
+                        }) }}
+                    </div>
+                    <div class="inputForm">
+                        {{ form_widget(registrationForm.plainPassword, { 
+                            'attr': {
+                                'class': 'input'
+                            } 
+                        }) }}
+                    </div>
+                    {{ form_errors(registrationForm.plainPassword) }}
+                </div>
 
-        <button type="submit" class="btn">Register</button>
-    {{ form_end(registrationForm) }}
+                <button type="submit" class="button-submit">Registrarse</button>
+            {{ form_end(registrationForm) }}
+            </form>
+        </div>
+    </div>
 {% endblock %}
