@@ -45,6 +45,7 @@
                 <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
 
                 <button class="button-submit" type="submit">Iniciar sesión</button>
+                <a href="{{ path('app_register') }}" class="link-register">¿No tienes cuenta? Regístrate</a>
             </form>
         </div>
     </div>
