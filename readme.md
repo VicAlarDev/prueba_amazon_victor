@@ -23,6 +23,11 @@ That script will do the following:
 
 - Create a test user for initial access.
 
+```bash
+email: test@example.com
+password: test1234
+```
+
 - Start the project at: [localhost](http://localhost)
 
 ## Environment Variables
